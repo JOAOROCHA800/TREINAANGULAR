@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {LocationStrategy, HashLocationStrategy} from '@angular/common'
@@ -24,6 +24,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import {SharedModule} from './shared/shared.module';
 
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 
 
@@ -42,13 +43,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     SharedModule.forRoot(),
     //CoreModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
