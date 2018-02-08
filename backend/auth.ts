@@ -9,7 +9,7 @@ export const handleAuthentication = (req: Request, resp: Response)=> {
   if (isValid(user)) {
     const dbUser = users[user.email]
     const token = jwt.sign({sub: dbUser.email, iss: 'meat-api'}, apiConfig.secret)
-    resp.json({name: dbUser.name, email: dbUser.email, accesToken: token})
+    resp.json({name: dbUser.name, email: dbUser.email, accessToken: token})
   } else {
     resp.status(403).json({message: 'Dados Inválidos.'})
   }
